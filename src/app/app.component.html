@@ -2,6 +2,9 @@
   <div id="info">
     <p class="instructions">Twilio Client</p>
     <div id="client-name">Caller: <strong>{{callerName}}</strong></div>
+    <input id="ThisClientName" type="text" placeholder="Caller name for this attempt" [(ngModel)]="callerName"/>
+    <button id="client-setup" (click)="clientSetup()">Client Setup</button>
+
     <div id="output-selection">
       <label>Ringtone Devices</label>
       <select id="ringtone-devices" multiple (onChange)="changeMic($event)"></select>
@@ -11,9 +14,9 @@
     </div>
   </div>
   <div id="call-controls">
-    <p class="instructions">Outgoing Caller ID's: 14062154726, 17603163595</p>
+    <p class="instructions">Caller ID: 14062154726 or 17603163595</p>
     <input id="ThisCallerID" type="text" placeholder="Enter callerID for this attempt" [(ngModel)]="fromNumber"/>
-    <p class="instructions">Make a Call:</p>
+    <p class="instructions">To Number:</p>
     <input id="phone-number" type="text" placeholder="Enter a phone # or client name" [(ngModel)]="toNumber"/>
     <button id="button-call" (click)="makeCall()">Call</button>
     <button id="button-hangup" (click)="hangUp()"> Hangup</button>
